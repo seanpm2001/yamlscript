@@ -45,3 +45,9 @@ docker-shell: docker-build dist
 
 docker-build:
 	docker build -t $(DOCKER_IMAGE) .
+
+gha-tmate:
+	@curl -X POST -H "Accept: application/vnd.github+json" -H "Authorization: token $$(grep api-token ~/.git-hub/config | awk '{print $$3}')" https://api.github.com/repos/ingydotnet/yamlscript/actions/workflows/debug-with-tmate.yaml/dispatches -d '{"ref":"debug-with-tmate","inputs":{"runs-on":"windows-2022"}}'
+	@echo 'GHA debug-with-tmate workflow started.'
+	@echo 'Go to: https://github.com/ingydotnet/yamlscript/actions'
+

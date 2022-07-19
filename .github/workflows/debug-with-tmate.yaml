@@ -1,0 +1,24 @@
+name: Debug with tmate
+
+on:
+  workflow_dispatch:
+    inputs:
+      runs-on:
+        description: Operating System
+        type: choice
+        default: windows-2022
+        options:
+        - windows-2022
+        - macos-12
+        - ubuntu-22.04
+        - windows-2019
+        - macos-11
+        - ubuntu-20.04
+        required: true
+
+jobs:
+  build:
+    runs-on: ${{ inputs.runs-on }}
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ingydotnet/action-tmate@v3
