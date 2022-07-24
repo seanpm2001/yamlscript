@@ -1,7 +1,7 @@
 package YAMLScript;
 use Mo qw(build default xxx);
 
-our $VERSION = '0.0.12_001';
+our $VERSION = '0.0.12_002';
 
 use YAMLScript::Compiler;
 use YAMLScript::NS;
