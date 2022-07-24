@@ -2,6 +2,8 @@
 
 base: ../Meta
 
+branch: dev-release
+
 language: perl
 
 author:
